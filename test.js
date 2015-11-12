@@ -7,5 +7,6 @@ test(t => {
 	childProcess.execFile('./cli.js', (err, stdout) => {
 		t.ifError(err);
 		t.true(stdout.trim().length === 0);
+		console.log(stdout.trim());
 	});
 });
