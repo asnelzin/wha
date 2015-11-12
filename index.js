@@ -17,10 +17,6 @@ function getRandomElement(array) {
 	return array[Math.floor(Math.random() * array.length)];
 }
 
-function handleError(error) {
-	console.log(error.response.body);
-}
-
 exports.setRandomWallpaper = function () {
 	got(downloadUrl)
 		.then(response => {
