@@ -35,9 +35,9 @@ exports.setRandomWallpaper = function () {
 					imgLink = `${imgLinkParsed.host + imgLinkParsed.pathname}?raw=1`;
 					got.stream(imgLink).pipe(fs.createWriteStream(tmpFile));
 				})
-				.catch(handleError);
+				.catch(console.log);
 		})
-		.catch(handleError);
+		.catch(console.log);
 
 	wallpaper
 		.set(tmpFile)
