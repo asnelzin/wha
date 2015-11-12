@@ -1,7 +1,55 @@
 {
   "name": "wha",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "Get and set desktop wallpaper from workhardanywhere.com",
+  "license": "MIT",
+  "repository": "asnelzin/wha",
+  "author": {
+    "name": "Alexander Nelzin",
+    "email": "asnelzin@gmail.com",
+    "url": "asnelzin.com"
+  },
+  "bin": {
+    "wha": "cli.js"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "win",
+    "windows",
+    "osx",
+    "linux",
+    "wallpaper",
+    "desktop",
+    "background",
+    "image",
+    "picture",
+    "photo",
+    "image",
+    "workhardanywhere",
+    "wha"
+  ],
   "dependencies": {
-    "wallpaper": "latest"
+    "got": "^5.1.0",
+    "meow": "^3.5.0",
+    "url": "^0.11.0",
+    "wallpaper": "latest",
+    "xmldom": "^0.1.19",
+    "xpath": "0.0.9"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "xo": "*"
+  },
+  "xo": {
+    "esnext": true
   }
 }
