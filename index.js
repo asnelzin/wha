@@ -29,13 +29,14 @@ exports.setRandomWallpaper = function () {
 					let imgLink = xpath.select('//a[text()="Laptop Wallpaper"]/@href', page);
 					const imgLinkParsed = uri.parse(imgLink[0].value);
 					imgLink = `${imgLinkParsed.host + imgLinkParsed.pathname}?raw=1`;
-					got.stream(imgLink).pipe(fs.createWriteStream(tmpFile));
+
+					let stream = got.stream(imgLink).pipe(fs.createWriteStream(tmpFile));
+					stream.on('finish', () => {
+						wallpaper.set(tmpFile)
+							.catch(console.log);
+					})
 				})
 				.catch(console.log);
 		})
-		.catch(console.log);
-
-	wallpaper
-		.set(tmpFile)
 		.catch(console.log);
 };
