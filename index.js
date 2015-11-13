@@ -30,11 +30,11 @@ exports.setRandomWallpaper = function () {
 					const imgLinkParsed = uri.parse(imgLink[0].value);
 					imgLink = `${imgLinkParsed.host + imgLinkParsed.pathname}?raw=1`;
 
-					let stream = got.stream(imgLink).pipe(fs.createWriteStream(tmpFile));
+					const stream = got.stream(imgLink).pipe(fs.createWriteStream(tmpFile));
 					stream.on('finish', () => {
 						wallpaper.set(tmpFile)
 							.catch(console.log);
-					})
+					});
 				})
 				.catch(console.log);
 		})
